@@ -1,167 +1,426 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="design.css">
-<html lang="pt-br">
+<html lang="pt-br" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <head>
-    <!-- ... (outros metadados) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  </head>
-  
-  <title>Portfólio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio de Kauã Reis Belizario — Analista de Dados Júnior / Analista de BI Júnior, especializado em Power BI, Looker Studio, SQL e BigQuery." />
+  <title>Kauã Reis Belizario | Analista de Dados Júnior</title>
+
+  <!-- Open Graph / redes sociais (LinkedIn, WhatsApp, Facebook) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Kauã Reis Belizario | Analista de Dados Júnior" />
+  <meta property="og:description" content="Portfólio de Kauã Reis Belizario — Analista de Dados Júnior / Analista de BI Júnior, especializado em Power BI, Looker Studio, SQL e BigQuery." />
+  <meta property="og:image" content="https://krbeli.github.io/meu-portfolio/assets/og-image.jpg" />
+  <meta property="og:url" content="https://krbeli.github.io/meu-portfolio/" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Twitter/X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kauã Reis Belizario | Analista de Dados Júnior" />
+  <meta name="twitter:description" content="Portfólio de Kauã Reis Belizario — Analista de Dados Júnior / Analista de BI Júnior, especializado em Power BI, Looker Studio, SQL e BigQuery." />
+  <meta name="twitter:image" content="https://krbeli.github.io/meu-portfolio/assets/og-image.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="progress-bar" id="progressBar"></div>
 
-  <!-- Cabeçalho -->
-  <header>
-    <div class="container-header">
-      <div class="logo">
-        <h1>Kauã Reis Belizario</h1>
-        <p><strong>Futuro Analista de Dados</strong></p>
-      </div>
-      <nav>
-        <ul class="menu">
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#habilidades">Habilidades</a></li>
-          <li><a href="#contato">Contato</a></li>
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="#top" class="logo">KRB<span class="logo-dot">.</span></a>
+
+      <nav class="main-nav">
+        <ul class="menu" id="menu">
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#experiencia" class="nav-link">Experiência</a></li>
+          <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+          <li><a href="#projetos" class="nav-link">Projetos</a></li>
+          <li><a href="#contato" class="nav-link">Contato</a></li>
         </ul>
       </nav>
+
+      <div class="header-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+        </button>
+        <button id="menuToggle" class="hamburger" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
-
-    <button id="darkModeToggle">🌙 Modo Escuro</button>
-
   </header>
-  
 
-  <!-- Seção Sobre -->
-  <section id="sobre" data-aos="fade-up" data-aos-duration="1000">
-    <h2>Sobre Mim</h2>
-    <div class="sobre-conteudo">
-      <img src="Imagem kaua.jpg" alt="Foto de perfil" class="foto-perfil">
-      <div class="texto-sobre">
-        <p>Olá! Me chamo Kauã e sou apaixonado por transformar dados em decisões. Minha jornada começou com curiosidade por planilhas e evoluiu para criar dashboards interativos, explorar bases SQL e aplicar insights em projetos reais.</p>
-        <p>Hoje, estou focado em evoluir como Analista de Dados, aplicando ferramentas como Power BI, SQL e Python em análises que fazem a diferença.</p>
-        <p>Estou sempre buscando aprender e colaborar em projetos com propósito. Vamos conversar? 😊</p>
-        <a href="Currículo Kauã dados.pdf" class="botao-cv" download>📄 Baixar Currículo</a>
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">Olá, seja bem-vindo(a) 👋</p>
+        <h1>Kauã Reis Belizario</h1>
+        <p class="hero-role">
+          <span id="typewriter"></span><span class="cursor" aria-hidden="true">|</span>
+        </p>
+        <p class="hero-desc">
+          Analista de Dados Júnior com experiência em Power BI, Looker Studio, SQL e BigQuery,
+          aplicando e expandindo conhecimentos para gerar decisões orientadas a dados e
+          melhoria contínua.
+        </p>
+        <div class="hero-cta">
+          <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
+          <a href="#contato" class="btn btn-outline">Entrar em Contato</a>
+          <a href="assets/curriculo-kaua-belizario.pdf" download class="btn btn-outline btn-cv">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>
+            Baixar Currículo
+          </a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/KRBeli" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub" title="Edite o link no HTML: href do GitHub">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.98 5.24.98 11.52c0 4.83 3.13 8.93 7.48 10.38.55.1.75-.24.75-.53v-1.86c-3.05.66-3.68-1.47-3.68-1.47-.5-1.26-1.21-1.6-1.21-1.6-1-.68.07-.66.07-.66 1.1.08 1.67 1.13 1.67 1.13.97 1.66 2.55 1.18 3.17.9.1-.7.38-1.18.68-1.45-2.44-.28-4.99-1.22-4.99-5.43 0-1.2.43-2.18 1.13-2.95-.11-.28-.49-1.4.1-2.92 0 0 .93-.3 3.04 1.13a10.5 10.5 0 0 1 5.54 0c2.11-1.43 3.04-1.13 3.04-1.13.6 1.52.22 2.64.11 2.92.7.77 1.13 1.75 1.13 2.95 0 4.22-2.56 5.15-5 5.42.39.34.74 1 .74 2.03v3.01c0 .29.2.64.76.53 4.35-1.45 7.47-5.55 7.47-10.38C23.02 5.24 18.27.5 12 .5Z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/kauareisbelizario" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn" title="Edite o link no HTML: href do LinkedIn">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.11 20.45H3.56V9h3.55v11.45Z"/></svg>
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
-  
+      <a href="#sobre" class="scroll-indicator" aria-label="Rolar para baixo">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </section>
 
-  <!-- Seção Projetos -->
-  <section id="projetos" data-aos="fade-up" data-aos-duration="1000">
-    <h2>Projetos</h2>
-    <div class="projetos-grid">
-  
-      <div class="card-projeto">
-        <img src="Learning Analytics 1.jpeg" alt="Learning Analytics">
-        <div class="conteudo-projeto">
-          <h3>Learning Analytics - Will Bank</h3>
-          <p><br>Gostaria de Compartilhar um sobre meu primeiro projeto que realizei dentro do will bank chamado Learning Analytics. 💛</br><br>Esse projeto consiste na construção de dashboards funcionais com o objetivo de trazer diversas visões sobre treinamentos no qual nosso time realiza, podemos identificar treinamentos que estão em andamento ou finalizados, certificações, a quantidade de treinamentos e pessoas que foram treinadas, tudo isso podendo filtrar o período que for mais interessante para o usuário.</br><br>Além disso podemos verificar feedbacks que nossos analistas recebem após seus treinamentos, podendo verificar oportunidades nas quais podemos melhorar e tambem saber o que já está bom. E uma outra observação sobre meu projeto seria que dentro dele também podemos observar as principais dúvidas de nossos clientes e agentes para que seja possivel tomar decisões mais precisas dentro de nossos treinamentos com o objetivo de desenvolver nosso colaborador para um atendimento cada vez melhor, consequentemente melhorando a experiência do nosso cliente!</br></p>
-          <p><strong><br>Ferramentas:</strong>Google Sheets e Looker Data Studio</br></p>
-          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7294134082794356736/" target="_blank">🔗 Ver Projeto</a>
-        </div>
-      </div>
-  
-      <div class="card-projeto">
-        <br><img src="Dash de filmes.jpg" alt="Dashboard de Filmes"></br>
-        <div class="conteudo-projeto">
-          <h3>Dashboard de Filmes</h3>
-          <p><br>Gostaria de mostrar meu primeiro dashboard que criei no Power BI, no qual eu pedi um case simples para o GPT e a partir disso desenvolvi um dash para testar minhas habilidades de Power BI.</br><br>Esse dash nos trás dados fictícios sobre alguns filmes selecionados como por exemplo:</br><br>
-            
-            <li>Ano de lançamento</li> 
-            <li>⁠Gênero</li> 
-            <li>⁠Total de votos</li>
-            <li>Nota IMDb</li>⁠
-            
-            </br>E a partir disso desenvolvi alguns insights para podermos analisar os dados e como por exemplo porcentagem de filmes por gênero, quais são as maiores notas de IMDb por Gênero e dentre outras visões, além disso criei filtros de Filme e Gênero para que seja possível trazer visões específicas sobre o assunto.</p>
-          <p><strong><br>Ferramentas:</strong> Excel, Power BI, Power Query e DAX</br></p>
-          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7311104261965148160/" target="_blank">🔗 Ver Projeto</a>
-        </div>
-      </div>
-  
-      <!-- Adicione mais cards como esse -->
-    </div>
-  </section>
-  
-
-  <!-- Seção Habilidades -->
-  <section id="habilidades" data-aos="fade-up" data-aos-duration="1000">
-    <h2>Habilidades</h2>
-    <div class="habilidades-grid">
-
-        <div class="habilidade">
-        <i class="fab fa-html5"></i> HTML
-        <div class="barra">
-            <div class="nivel" data-width="80%">80%</div>
-        </div>
-      </div>
-      
-      <div class="habilidade">
-        <i class="fab fa-css3-alt"></i> CSS
-        <div class="barra">
-          <div class="nivel" data-width="50%">50%</div>
-        </div>
-      </div>
-      
-      <div class="habilidade">
-        <i class="fas fa-chart-line"></i> Power BI
-        <div class="barra">
-            <div class="nivel" data-width="60%">60%</div>
-        </div>
-      </div>
-      <div class="habilidade">
-        <i class="fas fa-table"></i> Excel / Google Sheets
-        <div class="barra">
-            <div class="nivel" data-width="90%">90%</div>
-        </div>
-      </div>
-      <div class="habilidade">
-        <i class="fas fa-database"></i> SQL
-        <div class="barra">
-            <div class="nivel" data-width="40%">40%</div>
-        </div>
-      </div>
-      <div class="habilidade">
-        <i class="fab fa-python"></i> Python
-        <div class="barra">
-            <div class="nivel" data-width="40%">40%</div>
-        </div>
-      </div>
-      <div class="habilidade">
-        <i class="fas fa-chart-pie"></i> Looker Studio
-        <div class="barra">
-            <div class="nivel" data-width="80%">80%</div>
+    <!-- SOBRE -->
+    <section id="sobre" class="section">
+      <div class="section-inner reveal">
+        <p class="section-tag">// sobre mim</p>
+        <h2 class="section-title">Quem sou eu</h2>
+        <div class="about-grid">
+          <div class="about-photo">
+            <div class="photo-frame">
+              <img src="assets/foto-kaua.jpg" alt="Foto de Kauã Reis Belizario" />
+            </div>
           </div>
-          
+          <div class="about-text">
+            <p>
+              Olá! Me chamo Kauã e sou apaixonado por transformar dados em decisões.
+              Tenho atuado como Analista de Dados Júnior em empresas como Dentsu Latin America,
+              XP Inc. e Will Bank, desenvolvendo dashboards em Looker Studio, consultas SQL
+              avançadas no BigQuery e análises de comportamento de usuários a partir do Google
+              Analytics 4.
+            </p>
+            <p>
+              Gosto de resolver problemas reais com números: encontrar padrões, montar
+              dashboards claros e ajudar times a tomar decisões melhores com base em dados.
+              Também curso Tecnólogo em Análise e Desenvolvimento de Sistemas na Universidade
+              São Judas Tadeu, com previsão de conclusão em jun/2026.
+            </p>
+            <ul class="about-facts">
+              <li><strong>Cargo:</strong> Analista de Dados Júnior / Analista de BI Júnior</li>
+              <li><strong>Foco:</strong> Power BI, Looker Studio, SQL e BigQuery</li>
+              <li><strong>Localização:</strong> São Paulo - SP</li>
+              <li><strong>Idiomas:</strong> Português (nativo), Inglês e Espanhol (intermediário)</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  
-  
-  <!-- Seção Contato -->
-  <section id="contato" data-aos="fade-up" data-aos-duration="1000">
-    <h2>Contato</h2>
-    <p><i class="fas fa-envelope"></i> <a href="mailto:kauabeli21@gmail.com">kauabeli21@gmail.com</a></p>
-    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/kauareisbelizario/" target="_blank">www.linkedin.com/in/kauareisbelizario</a></p>
-    <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5511994997776" target="_blank">(11) 99499-7776</a></p>
-  </section>  
+    </section>
 
-  <!-- Rodapé -->
-  <footer>
-    <p>&copy; Obrigado pela Atenção!</p>
+    <!-- EXPERIÊNCIA -->
+    <section id="experiencia" class="section section-alt">
+      <div class="section-inner reveal">
+        <p class="section-tag">// experiência</p>
+        <h2 class="section-title">Trajetória Profissional</h2>
+        <ol class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="timeline-period">Fev/2026 — Jul/2026 · 6 meses</p>
+              <h3>Analista de Dados Júnior — Dentsu Latin America</h3>
+              <ul>
+                <li>Desenvolvimento e manutenção de dashboards em Looker Studio para monitoramento de KPIs de performance digital e comportamento de usuários.</li>
+                <li>Consultas SQL avançadas no BigQuery para análise de grandes volumes de dados do Google Analytics 4, com apoio de Python em tratamentos e automações.</li>
+                <li>Participação em processos de ETL, integração e transformação de dados para geração de indicadores estratégicos.</li>
+                <li>Análises de funis de navegação e desempenho de páginas, apoiando equipes de UX na otimização da experiência e conversão.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="timeline-period">Ago/2025 — Fev/2026 · 7 meses</p>
+              <h3>Estágio em Client Services Private — XP Inc.</h3>
+              <ul>
+                <li>Construção de dashboard para gestão de demandas e KPIs do time.</li>
+                <li>Apoio na criação de relatórios e apresentações para a Reunião de Resultados Mensais.</li>
+                <li>Automatização de processos internos, reduzindo retrabalho e tempo operacional.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="timeline-period">Abr/2025 — Ago/2025 · 5 meses</p>
+              <h3>Estágio em Análise de Dados — Neon Comercial Reagentes Analíticos</h3>
+              <ul>
+                <li>ETL de dados de vendas, compras e logística (ERP).</li>
+                <li>Criação de dashboards no Looker Studio para monitoramento de indicadores.</li>
+                <li>Construção de relatório mensal sobre vendas dos tipos de produtos para análise.</li>
+                <li>Criação e atualização de dados referente ao fechamento mensal.</li>
+                <li>Atualização e manutenção de planilhas de PCP.</li>
+                <li>Apoio no processo de geração de insights para times de logística e comercial.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="timeline-period">Jan/2024 — Mar/2025 · 1 ano e 3 meses</p>
+              <h3>Jovem Aprendiz — Will Bank</h3>
+              <ul>
+                <li>Automatização e controle de planilhas (Google Sheets).</li>
+                <li>Dashboards em Looker Studio com KPIs de atendimento (CSAT, TMA e NPS).</li>
+                <li>ETL de dados de atendimento e treinamentos.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <p class="timeline-period">Previsão: Jun/2026 (5º semestre)</p>
+              <h3>Tecnólogo em Análise e Desenvolvimento de Sistemas</h3>
+              <p class="timeline-plain">Universidade São Judas Tadeu</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section id="habilidades" class="section">
+      <div class="section-inner reveal">
+        <p class="section-tag">// habilidades</p>
+        <h2 class="section-title">Ferramentas &amp; Tecnologias</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-head">
+              <span class="skill-name">Power BI</span>
+              <span class="skill-level">Intermediário</span>
+            </div>
+            <div class="skill-bar"><span style="--level:70%"></span></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-head">
+              <span class="skill-name">Looker Studio</span>
+              <span class="skill-level">Intermediário</span>
+            </div>
+            <div class="skill-bar"><span style="--level:70%"></span></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-head">
+              <span class="skill-name">Excel</span>
+              <span class="skill-level">Avançado</span>
+            </div>
+            <div class="skill-bar"><span style="--level:85%"></span></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-head">
+              <span class="skill-name">SQL</span>
+              <span class="skill-level">Intermediário</span>
+            </div>
+            <div class="skill-bar"><span style="--level:70%"></span></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-head">
+              <span class="skill-name">BigQuery</span>
+              <span class="skill-level">Intermediário</span>
+            </div>
+            <div class="skill-bar"><span style="--level:70%"></span></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-head">
+              <span class="skill-name">Google Analytics 4</span>
+              <span class="skill-level">Intermediário</span>
+            </div>
+            <div class="skill-bar"><span style="--level:70%"></span></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-head">
+              <span class="skill-name">Python</span>
+              <span class="skill-level">Básico</span>
+            </div>
+            <div class="skill-bar"><span style="--level:40%"></span></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-head">
+              <span class="skill-name">HTML &amp; CSS</span>
+              <span class="skill-level">Intermediário</span>
+            </div>
+            <div class="skill-bar"><span style="--level:70%"></span></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-head">
+              <span class="skill-name">Power Automate</span>
+              <span class="skill-level">Básico</span>
+            </div>
+            <div class="skill-bar"><span style="--level:40%"></span></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-head">
+              <span class="skill-name">GitHub</span>
+              <span class="skill-level">Básico</span>
+            </div>
+            <div class="skill-bar"><span style="--level:40%"></span></div>
+          </div>
+        </div>
+        <p class="skill-note">
+          Outras ferramentas: Java, JavaScript, Pipefy e Google Tag Assistant (nível básico).
+          Idiomas: Inglês e Espanhol (intermediário — leitura e escrita).
+        </p>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos" class="section section-alt">
+      <div class="section-inner reveal">
+        <p class="section-tag">// projetos</p>
+        <h2 class="section-title">Projetos</h2>
+        <p class="section-subtitle">
+          Alguns dos projetos que venho desenvolvendo em Power BI, Looker Studio e neste próprio site.
+        </p>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-thumb">
+              <img src="assets/dashboard-filmes.jpg" alt="Print do Dashboard de Filmes em Power BI" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <h3>Dashboard de Filmes</h3>
+              <p>Painel interativo em Power BI com ETL e medidas DAX para explorar dados de filmes.</p>
+              <div class="tags">
+                <span class="tag">Power BI</span>
+                <span class="tag">ETL</span>
+                <span class="tag">DAX</span>
+              </div>
+              <div class="project-links">
+                <!-- Substitua "#" pelo link público/embed do relatório quando publicar -->
+                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7311104261965148160/" target="_blank" rel="noopener noreferrer" class="project-link">Ver projeto →</a>
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-thumb">
+              <img src="assets/dashboard-salarios.jpg" alt="Print do Dashboard de Salários em Dados feito com Streamlit" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <h3>Dashboard de Salários em Dados</h3>
+              <p>Dashboard interativo sobre salários na área de dados, construído com pandas, Streamlit e Plotly (Imersão Dados Alura).</p>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">Streamlit</span>
+                <span class="tag">Plotly</span>
+              </div>
+              <div class="project-links">
+                <a href="https://imersao-dados-alura-beli.streamlit.app/" target="_blank" rel="noopener noreferrer" class="project-link">Ver projeto →</a>
+                <a href="https://github.com/KRBeli/imersao-dados-alura" target="_blank" rel="noopener noreferrer" class="project-link">Código →</a>
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-thumb">
+              <img src="assets/learning-analytics.jpg" alt="Print do painel Learning Analytics em Looker Studio" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <h3>Learning Analytics</h3>
+              <p>Painel em Looker Studio com KPIs de projetos e treinamentos internos.</p>
+              <div class="tags">
+                <span class="tag">Looker Studio</span>
+                <span class="tag">KPIs</span>
+              </div>
+              <div class="project-links">
+                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7294134082794356736/" target="_blank" rel="noopener noreferrer" class="project-link">Ver projeto →</a>
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-thumb">
+              <img src="assets/site-portfolio.jpg" alt="Print da página inicial do Site Portfólio" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <h3>Site Portfólio</h3>
+              <p>Este site: desenvolvido em HTML, CSS e JavaScript para exibir minha trajetória e projetos de dados.</p>
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="https://krbeli.github.io/meu-portfolio/" target="_blank" rel="noopener noreferrer" class="project-link">Ver site →</a>
+                <a href="https://github.com/KRBeli/meu-portfolio" target="_blank" rel="noopener noreferrer" class="project-link">Código →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="section">
+      <div class="section-inner reveal">
+        <p class="section-tag">// contato</p>
+        <h2 class="section-title">Vamos conversar</h2>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <p>
+              Estou aberto a oportunidades, projetos e trocas sobre dados.
+              Envie uma mensagem pelo formulário ou fale comigo diretamente:
+            </p>
+            <a class="contact-email" href="mailto:kauabeli21@gmail.com">kauabeli21@gmail.com</a>
+            <a class="contact-phone" href="tel:+5511994997776">(11) 99499-7776</a>
+            <a href="assets/curriculo-kaua-belizario.pdf" download class="btn btn-outline btn-cv contact-cv">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>
+              Baixar Currículo
+            </a>
+            <div class="contact-socials">
+              <a href="https://github.com/KRBeli" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.98 5.24.98 11.52c0 4.83 3.13 8.93 7.48 10.38.55.1.75-.24.75-.53v-1.86c-3.05.66-3.68-1.47-3.68-1.47-.5-1.26-1.21-1.6-1.21-1.6-1-.68.07-.66.07-.66 1.1.08 1.67 1.13 1.67 1.13.97 1.66 2.55 1.18 3.17.9.1-.7.38-1.18.68-1.45-2.44-.28-4.99-1.22-4.99-5.43 0-1.2.43-2.18 1.13-2.95-.11-.28-.49-1.4.1-2.92 0 0 .93-.3 3.04 1.13a10.5 10.5 0 0 1 5.54 0c2.11-1.43 3.04-1.13 3.04-1.13.6 1.52.22 2.64.11 2.92.7.77 1.13 1.75 1.13 2.95 0 4.22-2.56 5.15-5 5.42.39.34.74 1 .74 2.03v3.01c0 .29.2.64.76.53 4.35-1.45 7.47-5.55 7.47-10.38C23.02 5.24 18.27.5 12 .5Z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/kauareisbelizario" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.11 20.45H3.56V9h3.55v11.45Z"/></svg>
+              </a>
+            </div>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <!-- Cole aqui a Access Key gerada em https://web3forms.com (basta informar seu e-mail lá, sem senha) -->
+            <input type="hidden" name="access_key" value="2f347b7c-5ab8-43f7-8e8e-a8a29f4de69f" />
+            <input type="hidden" name="subject" value="Nova mensagem pelo portfólio" />
+            <input type="checkbox" name="botcheck" class="hidden-field" tabindex="-1" autocomplete="off" />
+
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" required placeholder="Seu nome" />
+
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required placeholder="seu@email.com" />
+
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Sua mensagem..."></textarea>
+
+            <button type="submit" class="btn btn-primary" id="submitBtn">Enviar mensagem</button>
+            <p class="form-note" id="formNote"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Kauã Reis Belizario. Todos os direitos reservados.</p>
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
   </footer>
 
-  <button id="topoBtn" title="Voltar ao topo">↑</button>
-
   <script src="script.js"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
 </body>
 </html>

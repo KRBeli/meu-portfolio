@@ -1,0 +1,7 @@
+Arquivo que ainda falta nesta pasta:
+
+og-image.jpg
+  - Uma imagem de 1200x630px (banner com seu nome/cargo, ou print da tela inicial do site).
+  - Aparece como preview quando você compartilha o link do portfólio no LinkedIn, WhatsApp, etc.
+
+Os demais arquivos (currículo, foto e prints dos dashboards) já estão nesta pasta.
