@@ -494,6 +494,53 @@ html[data-theme="light"] .icon-moon { display: block; }
   font-size: 0.85rem;
 }
 
+/* ---------- Certifications ---------- */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+.cert-card {
+  display: flex;
+  gap: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.4rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cert-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+.cert-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.15), rgba(129, 140, 248, 0.15));
+}
+.cert-body h3 {
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+  line-height: 1.35;
+}
+.cert-issuer {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.88rem;
+  margin: 0 0 0.2rem;
+}
+.cert-meta {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  margin: 0 0 0.7rem;
+}
+
 /* ---------- Projects ---------- */
 .projects-grid {
   display: grid;
@@ -652,6 +699,45 @@ html[data-theme="light"] .icon-moon { display: block; }
   transform: translateY(0);
 }
 .back-to-top:hover { background: var(--surface-hover); }
+
+/* ---------- WhatsApp float button ---------- */
+.whatsapp-float {
+  position: fixed;
+  left: 1.5rem;
+  bottom: 1.5rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: #25d366;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+  z-index: 900;
+  animation: whatsapp-pulse 2.4s ease-in-out infinite;
+  transition: transform 0.2s ease;
+}
+.whatsapp-float:hover {
+  transform: scale(1.08);
+}
+.whatsapp-float .icon {
+  width: 30px;
+  height: 30px;
+}
+@keyframes whatsapp-pulse {
+  0%, 100% { box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45); }
+  50% { box-shadow: 0 8px 24px rgba(37, 211, 102, 0.75), 0 0 0 8px rgba(37, 211, 102, 0.12); }
+}
+
+@media (max-width: 720px) {
+  .whatsapp-float {
+    left: 1rem;
+    bottom: 1rem;
+    width: 50px;
+    height: 50px;
+  }
+}
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
