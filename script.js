@@ -55,7 +55,7 @@ updateProgressBar();
 updateBackToTop();
 
 // ---------- Efeito de digitação (typewriter) ----------
-const roles = ['Analista de Dados Júnior', 'Analista de BI Júnior', 'Especialista em Power BI & Looker Studio'];
+const roles = ['Analista de Dados', 'Analista de BI', 'Especialista em Power BI & Looker Studio'];
 const typewriterEl = document.getElementById('typewriter');
 let roleIndex = 0;
 let charIndex = 0;
