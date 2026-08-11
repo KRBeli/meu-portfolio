@@ -108,7 +108,7 @@ html[data-theme="light"] .site-header {
 
 .main-nav .menu {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .nav-link {
@@ -747,9 +747,7 @@ html[data-theme="light"] .icon-moon { display: block; }
   .about-grid { grid-template-columns: 1fr; }
   .photo-frame { width: 160px; height: 160px; font-size: 2rem; }
   .contact-grid { grid-template-columns: 1fr; }
-}
 
-@media (max-width: 720px) {
   .main-nav {
     position: fixed;
     top: 68px;
